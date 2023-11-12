@@ -12,7 +12,7 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(context) {
-    final currentQuestion = questions[1];
+    final currentQuestion = questions[2];
 
     return SizedBox(
       width: double.infinity,
@@ -28,26 +28,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 )),
           ),
           const SizedBox(height: 16),
-          AnswerButton(
-            answerText: currentQuestion.answers[0],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[1],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[2],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[3],
-            onTap: () {},
-          ),
-          AnswerButton(
-            answerText: currentQuestion.answers[4],
-            onTap: () {},
-          ),
+          ...currentQuestion.answers.map((item) {
+            return AnswerButton(
+              answerText: item,
+              onTap: () {},
+            );
+          }),
         ],
       ),
     );
