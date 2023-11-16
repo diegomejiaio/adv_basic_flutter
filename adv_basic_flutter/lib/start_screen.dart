@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.startQuiz, {super.key});
@@ -16,17 +17,24 @@ class StartScreen extends StatelessWidget {
             width: 450,
           ),
           const SizedBox(height: 40),
-          const Text(
+          Text(
             'Bienvenido al test de UX',
-            style: TextStyle(
-              fontFamily: 'Lexend',
-              fontSize: 30,
+            style: GoogleFonts.titilliumWeb(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
           const SizedBox(height: 20),
           OutlinedButton.icon(
-            label: const Text('Iniciar test'),
+            label: Text(
+              'Iniciar test',
+              style: GoogleFonts.titilliumWeb(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+                color: Colors.white,
+              ),
+            ),
             icon: const Icon(Icons.arrow_right_alt),
             onPressed: () {
               startQuiz();
