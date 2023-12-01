@@ -50,22 +50,25 @@ class QuestionsSummary extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(
-                        data['selectedAnswer'] as String,
-                        style: GoogleFonts.titilliumWeb(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: const Color.fromARGB(255, 0, 149, 160),
-                        ),
-                      ),
-                      const SizedBox(height: 5),
-                      Text(
-                        data['correctAnswer'] as String,
-                        style: GoogleFonts.titilliumWeb(
-                          fontSize: 12,
-                          fontWeight: FontWeight.normal,
-                          color: const Color.fromARGB(140, 255, 255, 255),
-                        ),
+                      Row(
+                        children: [
+                          Text(
+                            data['selectedAnswer'] as String,
+                            style: GoogleFonts.titilliumWeb(
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                                color: const Color.fromARGB(255, 32, 222, 63)),
+                          ),
+                          const SizedBox(width: 5),
+                          Text(
+                            data['correctAnswer'] as String,
+                            style: GoogleFonts.titilliumWeb(
+                              fontSize: 12,
+                              fontWeight: FontWeight.normal,
+                              color: const Color.fromARGB(140, 255, 255, 255),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 5),
                     ],

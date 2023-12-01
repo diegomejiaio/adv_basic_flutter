@@ -4,8 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:adv_basic_flutter/models/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers});
-
+  const ResultsScreen({
+    super.key,
+    required this.chosenAnswers,
+    required this.onRestart,
+  });
+  final void Function() onRestart;
   final List<String> chosenAnswers;
 
   List<Map<String, Object>> getSummaryData() {
@@ -73,11 +77,23 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ElevatedButton(
+            OutlinedButton.icon(
+              label: Text(
+                'Start again',
+                style: GoogleFonts.titilliumWeb(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.white,
+                ),
+              ),
+              icon: const Icon(Icons.restart_alt),
               onPressed: () {
-                Navigator.pop(context);
+                onRestart();
               },
-              child: const Text('Start Again'),
+              style: TextButton.styleFrom(
+                iconColor: Colors.white,
+                foregroundColor: Colors.white,
+              ),
             ),
           ],
         ),
